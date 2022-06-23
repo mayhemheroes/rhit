@@ -8,7 +8,17 @@ use {
 
 /// the content for a base being built
 #[derive(Default)]
+#[cfg(not(fuzzing))]
 struct BaseContent {
+    lines: Vec<LogLine>,
+    bar_idx: usize,
+    unfiltered_histogram: Histogram,
+    filtered_histogram: Histogram,
+}
+
+#[cfg(fuzzing)]
+#[derive(Default)]
+pub struct BaseContent {
     lines: Vec<LogLine>,
     bar_idx: usize,
     unfiltered_histogram: Histogram,

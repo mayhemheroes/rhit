@@ -200,6 +200,13 @@ impl<'c, C: LineConsumer> FileReader<'c, C> {
     }
 }
 
+#[cfg(fuzzing)]
+impl<'c, C: LineConsumer> FileReader<'c, C> {
+    pub fn fuzz_read_lines<R: Read>(&mut self, file: R, path: &Path) -> Result<()> {
+        self.read_lines(file, path)
+    }
+}
+
 fn print_progress(done: usize, total: usize) -> Result<()> {
     let width = 40;
     let p = ProgressBar::new(done as f32 / (total as f32), width);
