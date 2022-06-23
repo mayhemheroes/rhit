@@ -18,7 +18,7 @@ mod fields;
 mod trend;
 mod trend_computer;
 
-#[global_allocator]
+#[cfg_attr(not(fuzzing), global_allocator)]
 static ALLOC: leak::LeakingAllocator = leak::LeakingAllocator::new();
 
 pub use {
