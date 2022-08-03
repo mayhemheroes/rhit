@@ -1,0 +1,7 @@
+project: rhit
+target: log-reader
+
+cmds:
+  - cmd: /log_reader
+  - cmd: /log_reader_no_inst @@
+    libfuzzer: false
