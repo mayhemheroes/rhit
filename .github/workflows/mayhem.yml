@@ -49,7 +49,7 @@ jobs:
       fail-fast: false
       matrix:
         mayhemfile:
-          - mayhem/log_reader.mayhemfile
+        - mayhem/log_reader.mayhemfile
 
     steps:
       - uses: actions/checkout@v6
