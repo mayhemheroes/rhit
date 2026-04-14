@@ -20,8 +20,8 @@ struct BaseContent {
 pub struct BaseContent {
     lines: Vec<LogLine>,
     bar_idx: usize,
-    unfiltered_histogram: Histogram,
-    filtered_histogram: Histogram,
+    unfiltered_histogram: DateHistogram,
+    filtered_histogram: DateHistogram,
 }
 
 impl LineConsumer for BaseContent {
